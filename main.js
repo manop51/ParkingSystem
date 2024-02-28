@@ -16,7 +16,9 @@ app.use(require('./backend/router/router'))
 }catch(err){
 console.log(err)
 }
-
+app.get("/",(req,res)=>{
+res.send("hello world")
+})
 app.listen(process.env.port,()=>{
 console.log(`Server listening for request at ${process.env.port} `)
 })
