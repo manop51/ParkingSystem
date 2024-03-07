@@ -1,0 +1,119 @@
+*{
+margin: 0;
+padding: 0;
+box-shadow: 0;
+}
+
+
+/* styling of the park component is here */
+.parking{
+width: 100%;
+min-height: 100vh;
+}
+.parking nav{
+height: 160px;
+width: 100%;
+background-color: rgba(245, 245, 220, 0.623);
+
+}
+.parking nav div img{
+width: 140px;
+height: 100px;
+
+}
+
+.parking nav ul{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.parking nav ul li {
+list-style: none;
+padding-left: 10px;
+font-weight: bolder;
+cursor: pointer;
+}
+
+
+.Content{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+}
+.Content div{
+    text-align: center;
+margin-top: 20px;
+width: 1000px;
+height: 50vh;
+box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+-webkit-box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+-moz-box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+}
+.Content div p{
+font-weight: bolder;
+padding-bottom: 15px;
+}
+.Content div input{
+width: 56%;
+height: 30px;
+border-radius: 0.866886686553px;
+border-width: 0.000000000000000000000078655px;
+}
+.Content div input::placeholder{
+text-align: center;
+font-weight: bold;
+}
+.btn{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 20px;
+}
+.btn button{
+width: 150px;
+height: 40px;
+border-radius: 4px;
+border-width: 0.26363535553445245424545245px;
+text-align: center;
+cursor: pointer;
+font-weight: bolder;
+
+}
+
+.scs img{
+width: 100%;
+min-height: 100vh;
+}
+
+.forms{
+    width: 1000px;
+    height: 80vh;
+    box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+    -webkit-box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+    -moz-box-shadow: -12px 10px 5px 0px rgba(214,170,170,0.75);
+    text-align: center;
+}
+.forms form div input{
+    width: 56%;
+    height: 30px;
+    border-radius: 0.866886686553px;
+    border-width: 0.000000000000000000000078655px;
+}
+.forms form div input::placeholder{
+text-align: center;
+font-weight: bold; 
+}
+.forms form div{
+margin-top: 10px;
+}
+
+.forms form button{
+width: 150px;
+height: 40px;
+border-radius: 4px;
+border-width: 0.26363535553445245424545245px;
+text-align: center;
+cursor: pointer;
+font-weight: bolder;
+}

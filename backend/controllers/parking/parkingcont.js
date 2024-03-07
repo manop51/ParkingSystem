@@ -122,6 +122,7 @@ var response = await axios.post("https://sandbox.safaricom.co.ke/mpesa/stkpush/v
 headers:{authorization:`Bearer ${AccessToken}`}
 })
 console.log(response)
+res.status(202).send(response.data)
 await SendPaymentEmail(EmailAddress,response.data.CheckoutRequestID,Carnoplate,QueriedSteet.StreetName)
 
 }

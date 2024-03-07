@@ -9,7 +9,7 @@ Email:{
 type:String,
 unique:true,
 required:true
-},
+},//
 PhoneNumber:{
 type:String,
 unique:true,
@@ -18,6 +18,10 @@ required:true
 Dayofregistration:{
 type:Date,
 required:true,
+},
+Password:{
+type:String,
+required:true
 }
 })
 
