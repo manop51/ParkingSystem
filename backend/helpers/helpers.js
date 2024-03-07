@@ -7,11 +7,11 @@ function ValidateToken(req,res,next){
 try{
 var TokenExtract = req.headers["authorization"]
 if(!TokenExtract){
-return res.status(401).send("Unauthorized")
+return res.status(202).send("Unauthorized")
 }
 var ValidToken = jwt.verify(TokenExtract,process.env.jwtSecret)
 if(!ValidToken){
-return res.status(401).send("unauthorized")
+return res.status(202).send("Unauthorized")
 }else{
 next()
 }

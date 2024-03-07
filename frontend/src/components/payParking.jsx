@@ -1,13 +1,15 @@
 import axios from "axios"
 import {useState} from "react"
 import { useNavigate } from "react-router-dom"
+import Cookie from "js-cookie"
+import Preloader from "../preloader"
 export default function Payparking(){
 let Navigate = useNavigate()
 const [EmailValid,setEmailValid] = useState('')
 const [Car,setCar] = useState("")
 const [Phoneno,setPhoneNo] = useState("")
 const [Street,setStreet] = useState('')
-
+const [Loader,setLoader] = useState(false)
 
 function SelectTagChange(e){
 setStreet(e.target.value)  
@@ -24,6 +26,8 @@ return false
 
 
 async function GetReceipt(){
+setLoader(true)
+var token = Cookie.get("Access")
 try{
 var Payload = {
 Email:EmailValid,
@@ -31,10 +35,20 @@ Carplate:Car,
 Phone:Phoneno
 }
 var respo = await  axios.post("http://localhost:4500/test/payment",Payload,{
-params:{StreetName:Street}
+params:{StreetName:Street},
+headers:{Authorization:token}
 })
+console.log(respo.status)
 if(respo.data.CustomerMessage === "Success. Request accepted for processing"){
-Navigate("/success")
+setTimeout(function(){
+  Navigate("/success")
+  setLoader(false)
+},2700)
+}else if(respo.data === "Unauthorized"){
+setTimeout(function(){
+  Navigate("/")
+  setLoader(false)
+},2700)
 }
 
 
@@ -65,7 +79,9 @@ console.log(err)
 </ul>
 
     </nav>
-     <div className="Content">
+
+    {Loader ? (<Preloader/>):(
+      <div className="Content">
        <div>
         <p>Daily Parking</p>
         <p>
@@ -95,6 +111,8 @@ console.log(err)
     
       
      </div>
+    )}
+     
      <div className="btn">
      <button onClick={GetReceipt} disabled = {!ValidatePhone()}>
         Park

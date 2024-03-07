@@ -11,11 +11,8 @@ required:true
 IsfullyTaken:{
 type:Boolean,
 required:true
-},
-Charges:{
-type:Number,
-required:true
 }
+
 
 }) 
 var Parking = mongoose.model("Parking",Parkingslotschema,"Parkingsystem")

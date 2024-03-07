@@ -1,5 +1,9 @@
+var dotenv = require("dotenv")
+dotenv.config()
+
+
 var mongoose = require('mongoose')
-var Connectiondb = mongoose.connect("mongodb://127.0.0.1:27017/Parking").then(()=>{
+var Connectiondb = mongoose.connect(process.env.DB).then(()=>{
 console.log('Connection To Db success')
 }).catch((err)=>{
 console.log(err)
